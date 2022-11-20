@@ -1,0 +1,72 @@
+ArrayList<E> li1;
+ArrayList<E> li2;
+⬆：表相似
+⬆⬆：表示同一个，不同构造方法
+*：表示该方法有参数可省
+/:表示无
+
+				return	
+.add(int index,E element)*		boolean		在列表的指定位置插入一个指定元素，省略下标默认最后一个,插入成功返回true,感觉这个返回值没什么用
+.addAll(int index, Collection c)*		⬆				指定集合的所有元素
+.clear()				/		删除所有元素，与removeAll功能相同，但该方法效率更高
+(ArrayList<E>)li1.clone()		ArrayList<E>	复制当前集合，返回复制体，这是个标准的浅拷贝,另外可以看到该方法使用有点特殊，必须加强转
+.contains(Object obj)			boolean		判断是否存在指定对象		
+.get(int index)			E		按下标获得指定元素
+.indexOf(Object obj)			int		获得指定元素第一次出现的下标，没有则返回-1				
+.removeAll(Collection c)		boolean		删除c中有的，自身的所有元素，如果参数放自己，就等于clear方法，但此时我们一般直接用clear
+.remove(int index)			E		按索引删除对应元素并返回
+.remove(Object o)			boolean		按equals删除第一个匹配的对象，没有就返回false
+.size()				int		返回列表长度
+.isEmpty()				boolean		判断列表是否为空
+.subList(int fromIndex, int toIndex)	ArrayList<E>	按区间返回一个列表
+.set(int index,E element)		E		将下标位置的元素改为指定元素，并返回原来的元素
+.sort(Comparator c)*			/		对指定规则对列表进行排序，没参数则默认升序，规则口诀（前减后升，后减前降）
+.toArray(new T[n])*			T[]		按照给定的数组类型，返回一个具有原列表元素的数组，【注意】返回的不是参数内的数组，而是全新的，如果没有参数，则生成Object[]
+.toString()				String		就是我们平时看到的那样  [1,2,3]
+.ensureCapacity()			/		将列表底层的容量立即变成指定大小，其余一切性质并不会变
+.lastIndexOf(Object obj)		int		获得指定元素最后一次出现的位置下标，没有就返回-1		
+.retainAll(Collection c)		boolean		只保留c中包含的元素，即删除其他的，如果至少删除了一个，则返回true,一个都没删，则返回false
+.containsAll(Collection c)		boolean		检测是否c中的每一个元素都可以在列表中找到，null不会被特殊对待，如果全部都有，返回true,否则返回false
+.trimToSize()			/		和ensureCapacity()类似，将列表底层的容量立即变成与当前元素数量相同，其余一切性质并不会变
+.removeRange(int from.., int to..)	/		按给定区间删除一段元素
+.replaceAll(a -> k(a))			/		将列表内的每一个元素按指定操作变化，参数格式较奇怪，自动生成即可
+.removeIf(a  -> k(a))			boolean		按给定的条件删除元素，k(a)返回true则删除	
+.forEach(Consumer<E> action)		/		对每一个元素进行指定操作
+
+.forEach()附加内容：
+try {
+                    Field f=integer.getClass().getDeclaredField("value");
+                    f.setAccessible(true);
+                    f.set(integer,3);
+                } catch(Exception e) {}
+在自动生成的格式中，添加以上代码来更改Integer型的值，该代码内容日后自行了解
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

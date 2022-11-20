@@ -1,0 +1,52 @@
+String st1;
+String st2;
+⬆：表相似
+⬆⬆：表示同一个，不同构造方法
+
+				return
+st1.charAt(int index)			char	返回索引处的char值。
+st1.compareTo(st2)			int	比较两个字符串的字典序。大于0，t1在后；等于0，完全相等，小于0，st1在前。
+     .compareToIgnoreCase		⬆	忽略大小写
+st1.concat(st2)			String	连接字符串，变为st1st2
+st1.endWith(st2)			boolean	st1是否以st2结尾
+st1.equals(Object)			boolean	比较内容是否相等
+st1.getBytes()			byte[]	将字符串的每个字符变成对应的ASCII码值放入一个新的byte[]中
+     .getBytes(String charsetName)	⬆⬆	可加指定的字符集名字，而不是ASCII字符集
+st1.getChars(int a, int b, char[] c, int d)	⬆	将字符串的[a,b)区间变成一个个char型放到char[] c中,开始位置下标为d
+st1.hashCode()			int	通过一个固定的的计算方式，返回一个哈希值
+st1.indexOf(st2)			int	返回st2在st1中第一次出现的下标，参数可以为int和char
+     .indexOf(st2,int fromIndex)		⬆⬆	不从0开始找，而是从fromIndex开始
+st1.lasttIndexOf(st2)			⬆	返回st2最后一次出现的位置下标，参数可以为int和char
+     .lasttIndexOf(st2,int fromIndex)	⬆⬆	！！【该方法与常规逻辑不符，勿用】逻辑为从给定下标往前搜索，当st2长度超过1时，返回的下标对应结果可能一半在区间内，一半在区间外，即下标后的内容对结果依旧有影响
+st1.length()			int	返回字符串的长度
+st1.matches(String regex)		boolean	st1是否符合给定的正则表达式
+st1.replace(char old,char new)		String	用new代替原字符串中的old，然后返回
+st1.replaceAll(String regex,String new)	⬆	用new代替符合给定正则表达式regex的子字符串
+st1.replaceFirst(String regex,String new)	⬆				           第一个
+st1.split(String regex)		String[]	用给定的正则表达式的匹配来分割字符串，分割符自身不会在结果中
+st1.split(String regex，int a)		⬆⬆	最多分成a份
+st1.startWith(st2)			boolean	返回st1是否以st2结尾
+st1.startWith(st2,int fromIndex)	⬆⬆	从fromIndex开始
+st1.substring(int begin)		String	返回一个新的子字符串，为原字符串begin开始至结束
+st1.substring(int begin,int end)	⬆⬆	返回的字符串为[begin , end)
+st1.toCharArray()			char[]	返回由这个字符串变成的char数组
+st1.toLowerCase()			String	返回小写，用默认规则，可加变量表特定规则。
+st1.toUpperCase()			⬆	返回大写
+st1.trim()				⬆	用于删除st1前后空白
+st1.contains(CharSequence chars)	boolean	判断是否包含指定字符串，参数就记得为字符串即可。实际还包含StringBuffer和StringBuilder
+st1.isEmpty()			boolean	判断是否为空，用处不大，长度为0即为空，不为0则不为空
+
+静态方法：
+.copyValueOf(char[] data)		String	将该char数组组成字符串返回
+      (char[] data, int offset, int count)	⬆⬆	由offset开始，向后count个
+.valueOf(Object)			String	返回给定对象的字符串形式，常用与4类八种基本数据，char[]
+
+
+
+以下方法感觉几乎没有用处，可不看。
+st1.contentEquals(StringBuffer a)	boolean	st1与a内容相等就返回true,否则false
+st1.intern()			String	【自己的解释】返回值看起来和st1完全一样，但是是在字符串池中的索引，而不是堆中的索引。(感觉用处不大)
+st1.regionMatches(a,st2,b,c)		boolean	比较两个字符串指定区域是否相等，st1由a开始，st2由b开始，比较长度为c,还可以添加一个是否忽略大小写参数boolean，加在最开始位置
+st1.subSequence(int begin,int end)	CharSequence	和substring相比，就是返回的类型不同，不了解就不用
+
+

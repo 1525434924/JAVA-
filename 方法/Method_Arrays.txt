@@ -1,0 +1,44 @@
+int[] a;
+int[] a2;
+*：表示该方法有参数可省
+/:表示无
++：方法名前加parallel，变成支持并行的方法，并行方法可以利用多个CPU增加效率
+
+以下大部分方法都可增加参数来修改作用的区间，下面不再详细写出
+					return
+.binarySearch(type[] a, type key)		int		二分查找，找到返回索引，找不到返回随机负数
+.copyOf(type[] original, int length)		type[]		根据给定数组，复制指定长度,从索引0开始，长度不足则舍弃后面元素，多出补充默认元素，0，false,null
+.copyOfRange(type[] original, int from, int to)	type[]		复制数组指定段，前包后不包
+.equals(type[] a, type[] a2)			boolean		判断内容是否相等、
+.fill(type[] a, type val)				/		将a中的所有元素赋值为val
+.sort(type[] a,new Comparator)*+		/		对a中元素进行排序，默认升序，前减后升
+.toString(type[] a)				String		数组特有的toString
+.parallelPrefix(xxx[] array, XxxBinaryOperator op)	/		将数组内的值依次放入op中计算，结果替换数组中原来的数，并参与下一次计算，op中含有两个参数，left表示上一次的计算结果，right表示取得的下一个数，表现为f(x)=g(x,x-1)
+.setAll(xxx[] array, IntToXxxFunction generator)+	/		用数组原来的数，计算新的数，generator中提供一个参数当前索引，表现为f(x)=g(x)	
+
+
+暂未理解的方法：
+spliterator(xxx[] array)			Spliterator.OfXxx
+stream(xxx[] array)				XxxStream
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

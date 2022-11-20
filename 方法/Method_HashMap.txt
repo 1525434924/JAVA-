@@ -1,0 +1,49 @@
+HashMap<String,Integer> map1;	key和value都可以是任何对象，都不能是基本数据类型，但key通常选String
+HashMap<String,Integer> map2;	key和value都可以是null,但最好不要这么干，很多方法产生的效果会不明确
+⬆：表相似
+⬆⬆：表示同一个，不同构造方法
+*：表示该方法有参数可省
+/:表示无
+
+					return
+.clear()					/		删除hashMap中所有的键/值对
+(HashMap<Integer, String>)map1.clone()	对应的		【注意】必须加强转，浅拷贝
+.isEmpty()					boolean		判断map1是否为空，无任何键值对就返回true
+.size()					int		返回map1中键值对的数量
+.put(K key，V value)				V		始终会插入value,然后返回key原本的value,若原来key不存在，返回null
+.putAll(Map map2)				/		将map2中的键值对添加到map1中，如有重复则覆盖
+.putIfAbsent(K key，V value)			V		插入键值对，若存在且value不为null，不插入并返回原值，否则插入并返回null
+.remove(Object key)				Object		按照key删除键值对，返回对应的value,key不存在则返回null
+.remove(Object key, Object value)		boolean		根据键值对精准删除，成功返回true
+.containsKey(Object key)			boolean		检查map1中是否存在指定的 key 对应的映射关系,存在则返回true
+.containsValue(Object value)			boolean		检查map1中是否存在指定的value对应的映射关系,存在则返回true
+.replace(K key, V newValue)			V		替换原有的值，一定不会新增，返回旧值
+.replace(K key, V oldValue, V newValue)		boolean		替换原有的值，一定不会新增，成功返回true
+.replaceAll(Bifunction<K, V> function)		/		根据函数功能，替换map1中的所有值
+.get(Object key)				value		【注意】key找不到会报空指针异常，根据给定的key返回value
+.getOrDefault(Object key, V defaultValue)		V		根据给定的key返回value，key不存在返回默认值
+.forEach(BiConsumer<K, V> action)		/		根据函数功能对每个键值对进行操作
+.entrySet()					Set<Map.Entry<>>	返回map1的set视图，像这样：{K1=V1，K2=V2}
+.keySet()					Set<K>		返回map1中所有 key 组成的集合视图
+.values()					Collection<V>	返回map1中所有value组成的集合视图
+.merge(key, value, remappingFunction)		value		尝试插入键值对，若键已经存在且不为null,value变为根据函数计算后的值，函数提供旧值与新值两个参数
+
+以下三个繁琐而用处不大：添加K=null键值对
+.compute(K key, BiFunction remappingFunction)			存在则修改，不存在则添加，因为和null相关，易引发空指针异常
+.computeIfAbsent(K key, Function remappingFunction)		不存在则添加，存在则不做改动
+.computeIfPresent(K key, BiFunction remappingFunction)		存在则修改，不存在则不做改动
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
